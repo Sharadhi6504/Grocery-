@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shopping-cart"></i> Smart Grocery Manager</h1>
+            <p>Organize your shopping list intelligently</p>
+        </header>
+
+        <main>
+            <!-- Add Item Section -->
+            <section class="add-item-section">
+                <div class="input-group">
+                    <input type="text" id="itemInput" placeholder="Add grocery item..." autocomplete="off">
+                    <select id="categorySelect">
+                        <option value="">Select Category</option>
+                        <option value="fruits">🍎 Fruits</option>
+                        <option value="vegetables">🥕 Vegetables</option>
+                        <option value="dairy">🥛 Dairy</option>
+                        <option value="meat">🥩 Meat & Fish</option>
+                        <option value="grains">🌾 Grains & Bread</option>
+                        <option value="snacks">🍿 Snacks</option>
+                        <option value="beverages">🥤 Beverages</option>
+                        <option value="household">🧽 Household</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                    <input type="number" id="quantityInput" placeholder="Qty" min="1" value="1">
+                    <button id="addItemBtn"><i class="fas fa-plus"></i></button>
+                </div>
+                
+                <!-- Smart Suggestions -->
+                <div id="suggestions" class="suggestions"></div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <i class="fas fa-list"></i>
+                    <div>
+                        <span class="stat-number" id="totalItems">0</span>
+                        <span class="stat-label">Items</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <span class="stat-number" id="completedItems">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tags"></i>
+                    <div>
+                        <span class="stat-number" id="categoriesCount">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter and Sort -->
+            <section class="controls-section">
+                <div class="filter-group">
+                    <select id="filterCategory">
+                        <option value="">All Categories</option>
+                        <option value="fruits">🍎 Fruits</option>
+                        <option value="vegetables">🥕 Vegetables</option>
+                        <option value="dairy">🥛 Dairy</option>
+                        <option value="meat">🥩 Meat & Fish</option>
+                        <option value="grains">🌾 Grains & Bread</option>
+                        <option value="snacks">🍿 Snacks</option>
+                        <option value="beverages">🥤 Beverages</option>
+                        <option value="household">🧽 Household</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                    
+                    <select id="sortBy">
+                        <option value="name">Sort by Name</option>
+                        <option value="category">Sort by Category</option>
+                        <option value="date">Sort by Date Added</option>
+                    </select>
+                    
+                    <button id="clearCompleted" class="clear-btn">
+                        <i class="fas fa-trash"></i> Clear Completed
+                    </button>
+                </div>
+            </section>
+
+            <!-- Shopping List -->
+            <section class="list-section">
+                <div id="shoppingList" class="shopping-list">
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-shopping-basket"></i>
+                        <h3>Your grocery list is empty</h3>
+                        <p>Add some items to get started!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <button id="addCommonItems" class="action-btn">
+                    <i class="fas fa-magic"></i> Add Common Items
+                </button>
+                <button id="exportList" class="action-btn">
+                    <i class="fas fa-download"></i> Export List
+                </button>
+                <button id="clearAll" class="action-btn danger">
+                    <i class="fas fa-trash-alt"></i> Clear All
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
