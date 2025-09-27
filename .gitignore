@@ -1,0 +1,29 @@
+# Compiled files
+*.exe
+*.obj
+*.o
+
+# Code::Blocks files
+*.cbp
+*.layout
+*.depend
+*.save
+
+# C source files (since this is now a web app)
+*.c
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*~
+*.tmp
+*.temp
